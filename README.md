@@ -1,0 +1,2 @@
+# MagicClient
+A MCPE client.
