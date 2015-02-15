@@ -200,7 +200,7 @@ public class PacketHandler extends Thread{
 
     private void handlePacket(byte[] data) throws IOException {
         byte pid = data[0];
-        client.getLogger().debug("Handling packet: PID: "+pid+", length is: "+data.length);
+        client.getLogger().debug("Handling packet: PID: "+String.format("0x%02x", pid)+", length is: "+data.length);
         switch(pid){
             case RAKNET_OPEN_CONNECTION_REPLY_2:
                 client.getLogger().debug("Recieved 0x08!");
@@ -275,7 +275,7 @@ public class PacketHandler extends Thread{
                     break;
 
                 default:
-                    client.getLogger().warn("Unknown packet: "+pid);
+                    client.getLogger().warn("Unknown packet: "+String.format("0x%02x", pid));
                     break;
             }
         }
